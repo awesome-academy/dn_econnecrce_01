@@ -69,6 +69,7 @@ en:
     text_login_failed: "Login failed invalid username or password"
     text_login_not_found: "User not found"
     text_login_pls: "Please log in ..."
+    welcom: "welcom to Cheer app"
   layout_header:
     text_phone: "Phone: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"
@@ -82,6 +83,7 @@ en:
     main_title: "Cheers"
     text_link_log_out: "Log out"
     text_link_log_in: "Login"
+    welcom: "Welcom to cheer app"
   layout_footer:
     text_top_product: "Top Products"
     text_quick_links: "Quick Links"
@@ -131,7 +133,7 @@ en:
     text_button_add: "Add"
     text_success_product: "Product added"
     text_select: "Select a category"
-    text_error_category: "Category not found"
+    text_error_category: "Category not found please choose one "
     text_usd: "USD"
     text_edit: "Edit"
     text_delete: "Delete"

@@ -32,5 +32,7 @@ class User < ApplicationRecord
                                     minimum: Settings.phone_number_minimum,
                                     message: :bad_phone_number},
    format: {with: VALID_PHONE_NUMBER_REGEX,
-            message: :bad_phone_number}
+            message: :bad_phone_number},
+   presence: true,
+   uniqueness: true
 end

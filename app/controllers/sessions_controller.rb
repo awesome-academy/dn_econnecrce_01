@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       if @user.role?
         redirect_to admin_root_url
       else
+        flash[:success] = t "login.welcom"
         redirect_to root_url
       end
       log_in @user
@@ -28,7 +29,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email].downcase)
     return if @user
 
-    flash.now[:danger] = "login.text_login_not_found"
-    redirect_to root_url
+    flash[:danger] = t "login.text_login_not_found"
+    redirect_to login_path
   end
 end

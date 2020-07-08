@@ -52,7 +52,7 @@ class Admin::ProductsController < AdminsController
     return if @category
 
     flash[:danger] = t "products.text_error_category"
-    redirect_to :new
+    redirect_to new_admin_product_path
   end
 
   def product_params

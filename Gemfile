@@ -28,6 +28,8 @@ gem "webpacker", "~> 4.0"
 gem "will_paginate", "3.1.8"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
 end
 group :development do
   gem "listen", "~> 3.2"
@@ -37,6 +39,8 @@ group :development do
 end
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner"
+  gem "rspec-rails"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
