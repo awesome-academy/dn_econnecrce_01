@@ -18,8 +18,6 @@ class Admin::ProductsController < AdminsController
     redirect_to admin_root_url
   end
 
-  def show; end
-
   def new
     @product = Product.new
   end
