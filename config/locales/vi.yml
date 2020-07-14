@@ -52,6 +52,29 @@ vi:
     purchase_status: "Trạng thái"
     text_created: "Cập nhật lúc"
     text_quest: "Bạn có chắc là huỷ hoá đơn này ? "
+  mailer:
+    text_hello: "Xin chào"
+    text_p: "Một ai đó vừi mới yêu cầu một link để đổi mật khẩu tài khoản của bạn, bạn có thể làm điều đó bằng link ở dứoi đây."
+    text_btn_link: "Thay đổi mật khẩu của tôi"
+    text_p2: "Nếu bạn không yêu cầu điều này, hãy bỏ qua email này."
+    text_p3: "Mật khẩu của bạn sẽ không được thay đổi cho đến khi bạn truy cập vào link ở trên và tạo môt cái mới."
+    text_p4: " Chúng tôi đang hợp tác với bạn rằng password của bạn vừa mới thay đổi."
+    text_cf: "Xác nhận tài khoản của tôi"
+    text_cf_link: "Bạn xác nhận tài khoản email bằng link dưới đây:"
+    text_welcom: "Chào mừng"
+    text_cf: "Gửi lại hướng dẫn xác thực"
+    text_btn_submit: "Gửi lại hướng dẫn xác thực"
+  links:
+    txt_not_received: "không nhận được hướng dẫn xác nhận?"
+    txt_unlock: "Không nhận được hướng dẫn mở khoá tài khoản"
+    txt_forgot: "Quên mật khẩu"
+    txt_login: "Đăng nhập"
+    txt_sign_up: "Đăng ký"
+  change_pass:
+    text_form: "Thay đổi mật khẩu"
+    text_btn_change: "Thay đổi mật khẩu"
+    text_confirm: "Xác nhận mật khẩu"
+    txt_register: "Đăng ký"
   admin_products:
     title_table: "Quản lí sản phẩm"
     text_button_add: "Thêm mới sản phẩm"
@@ -70,6 +93,7 @@ vi:
     text_login_not_found: "Không tìm thấy người dùng"
     text_login_pls: "Làm ơn đăng nhập ..."
     welcom: "Chào mừng bạn đến với Cheer app"
+    text_btn_reset: "Gửi cho tôi hướng dẫn thay đổi mật khẩu"
   layout_header:
     text_phone: "Số điện thoại: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"

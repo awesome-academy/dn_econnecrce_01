@@ -4,10 +4,10 @@
   </a>
 </div>
 <ul class="nav navbar-right top-nav">
-  <% if logged_in? %>
-    <li><%= link_to current_user.name, "#" %></li>
-    <li><%= link_to t("layout_header.text_link_log_out"), logout_path, method: :delete %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to current_user.username, "#" %></li>
+    <li><%= link_to t("layout_header.text_link_log_out"), destroy_user_session_path, method: :delete %></li>
     <% else %>
-    <li><%= link_to t("layout_header.text_link_log_in"), login_path %></li>
+    <li><%= link_to t("layout_header.text_link_log_in"), user_session_path %></li>
   <% end %>
 </ul>

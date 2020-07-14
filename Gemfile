@@ -9,6 +9,7 @@ gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "chartkick", "~> 3.0", ">= 3.0.1"
 gem "config"
+gem "devise", "~> 4.1"
 gem "faker", "2.1.2"
 gem "figaro"
 gem "image_processing", "1.9.3"
@@ -29,8 +30,8 @@ gem "will_paginate", "3.1.8"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
-  gem "shoulda-matchers"
   gem "rails-controller-testing"
+  gem "shoulda-matchers"
 end
 group :development do
   gem "listen", "~> 3.2"

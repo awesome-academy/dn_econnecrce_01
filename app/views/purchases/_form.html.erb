@@ -2,7 +2,7 @@
 <%= form_for @purchase, class: "row contact_form" do |f| %>
   <%= render "admin/shared/error_messages", object: f.object%>
   <div class="col-md-12 form-group">
-    <%= f.text_field :name, id: :name, value: current_user.name,
+    <%= f.text_field :name, id: :name, value: current_user.username,
       class: "form-control", placeholder: true %>
   </div>
   <div class="col-md-6 form-group p_star">

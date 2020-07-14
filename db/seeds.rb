@@ -1,11 +1,8 @@
 # Generate a bunch of additional users.
-User.create!(name:  "Hoang Vu Nhat Tan",
+User.create!(username:  "Hoang Vu Nhat Tan",
  email: "omgod234@gmail.com",
  password: "foobar",
  password_confirmation: "foobar",
- role: true,
- activated: true,
- activated_at: Time.zone.now,
  address: "222 ha Van Tinh, quan lien chieu, TP Da nang",
  phone_number: "0941789420")
 
@@ -16,7 +13,7 @@ User.create!(name:  "Hoang Vu Nhat Tan",
   phone_number = "0941789420"
   email = Faker::Internet.email
   password = "foobar"
-  User.create!(name: name,
+  User.create!(username: name,
    email: email,
    password: password,
    password_confirmation: password,
@@ -35,7 +32,7 @@ end
 categories = Category.all
 3.times do |n|
   name = Faker::Beer.name
-  unit_price = Faker::Number.decimal(l_digits: 2, r_digits: 3)
+  unit_price = Faker::Number.within(range: 1..10)
   quantity = Faker::Number.within(range: 1..10)
   description = Faker::Beer.style
   categories.each{|category| category.products.create!(

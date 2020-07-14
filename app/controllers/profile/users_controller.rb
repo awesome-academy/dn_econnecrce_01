@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  before_action :load_user, :logged_in_user, only: %i(edit show update)
+class Profile::UsersController < ApplicationController
+  before_action :load_user, :authenticate_user!, only: %i(edit show update)
   before_action :correct_user, only: %i(edit update)
 
   def show
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     if @user.update user_params
       flash[:success] = t "profile.btn_updated"
-      redirect_to @user
+      redirect_to profile_user_path
     else
       render :edit
     end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def user_params
     params
       .require(:user)
-      .permit(:name, :phone_number, :email, :image, :address)
+      .permit(:username, :phone_number, :email, :image, :address)
   end
 
   # current user != true rails warning

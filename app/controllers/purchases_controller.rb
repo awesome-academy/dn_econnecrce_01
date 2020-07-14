@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :logged_in_user, except: %i(home index destroy)
+  before_action :authenticate_user!, except: %i(home index destroy)
   before_action :cart_is_empty?, only: %i(create new)
   before_action :find_purchase, only: %i(edit update)
 

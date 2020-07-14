@@ -1,5 +1,5 @@
 class Admin::ProductsController < AdminsController
-  before_action :logged_in_user, except: %i(show index)
+  before_action :authenticate_user!, except: :index
   before_action :load_product, except: %i(create new index import)
   before_action :find_category, only: %i(create update)
 

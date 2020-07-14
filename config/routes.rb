@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
-    get "/login", to: "sessions#new", as: "login"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
+    devise_scope :user do
+      get "/login", to: "devise/sessions#new", as: "login"
+      post "/login", to: "devise/sessions#create"
+      delete "/logout", to: "devise/sessions#destroy", as: "logout"
+      get "/register", to: "devise/registrations#new", as: "register"
+      put "/resetpassword", to: "devise/passwords#create", as: "reset_password"
+    end
+    namespace :profile do
+      resources :users, only: %i(show edit update)
+    end
     resources :products, only: %i(show index)
     post "carts/:id/add", to: "carts#add_item", as: "cart_add_item"
     delete "carts/:id/delete", to: "carts#remove_from_cart", as: "remove_from_cart"
@@ -11,7 +18,7 @@ Rails.application.routes.draw do
     get "/purchases", to: "purchases#new"
     resources :purchases, except: %i(home index destroy)
     resources :categories, only: :index
-    resources :users, only: %i(edit show update)
+    devise_for :users
     namespace :admin do
       root "products#index"
       resources :products, only: :import do

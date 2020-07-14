@@ -1,0 +1,63 @@
+vi:
+  devise:
+    confirmations:
+      confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
+      send_instructions: "Bạn sẽ nhận được một email với các hướng dẫn về cách xác nhận địa chỉ email của bạn trong vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được email có hướng dẫn về cách xác nhận địa chỉ email của bạn trong vài phút."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      invalid: "Không đúng %{authentication_keys} hoặc mật khẩu."
+      locked: "Tài khoản đã bị khoá"
+      last_attempt: "Bạn có thêm một lần thử trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "Không đúng %{authentication_keys} hoặc password."
+      timeout: "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn phải xác nhận địa chỉ email của bạn trước khi tiếp tục."
+    mailer:
+      confirmation_instructions:
+        subject: "Xác nhận hướng dẫn"
+      reset_password_instructions:
+        subject: "Hướng dẫn đặt lại mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khoá tài khoản"
+      email_changed:
+        subject: "Email đã thay đổi"
+      password_change:
+        subject: "Mật khẩu đã thay đổi"
+    omniauth_callbacks:
+      failure: "Không thể xác thực %{kind} because \"%{reason}\"."
+      success: "Xác thực thành công từ  %{kind} tài khoản."
+    passwords:
+      no_token: "bạn không thê truy cập trang web này đến từ một một mật khẩu đặt lại email. Nếu bạn đến từ 1 mật khẩu đặt lại email, làm ơn chắc chắn bạn đã sử dụng đầy đủ URL được cung cấp"
+      send_instructions: " Bạn sẽ nhận được một email với những hướng dẫn làm thế nào để đặt lại mật khẩu trong vài phút nữa"
+      send_paranoid_instructions: "Nếu địa chỉ email đã tồn tại trong cơ sở dữ liệu, bạn sẽ nhận một link thay đổi lại mật khẩu trong email của bạn trong vài phút nữa"
+      updated: "Mật khẩu của bạn đã được thay đổi. Bạn đã đăng nhập"
+      updated_not_active: "Mật khẩu của bạn đã được thay đổi thành công."
+    registrations:
+      destroyed: "Tạm biệt! Tài khoản của bạn đã hoàn toàn bị huỷ. Chúng tôi hi vọng răng gặp lại bạn sớm."
+      signed_up: "Chào mừng! Bạn vừa mới đăng nhập thành công"
+      signed_up_but_inactive: "Bạn vừa mời đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn bởi vì tài khoản của bạn chưa được kích hoạt."
+      signed_up_but_locked: "Bạn đã đăng nhập thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn bởi vì tài khoản của bạn bởi vì tài khoản của bạn đã bị khoá."
+      signed_up_but_unconfirmed: "Một tin nhắn với một được link xác thực vừa mới được gửi vào email của bạn. Làm ơi theo dõi được link để kích hoạt tài khoản."
+      update_needs_confirmation: "Bạn đã cập nhật tài khoản của bạn thành công, nhưng chúng tôi cầy chỉ định một địa chỉ email mới. Làm ơn kiểm tra email của bạn và theo dõi link xác thực để xác nhận địa chỉ email của bạn."
+      updated: "Tài khoản của bạn đã được cập nhật thành công."
+      updated_but_not_signed_in: "Tài khoản của bạn được cập nhật thành công, nhưng từ nay mật khẩu của bạn đã thay đổi, bạn cần phải đăng nhập lại lần nữa."
+    sessions:
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      already_signed_out: "Đăng xuất thành công"
+    unlocks:
+      send_instructions: "Bạn sẽ nhận được một email với những hướng dẫn làm cách nào để mở khoá tài khoản của bạn trong vài phút nữa."
+      send_paranoid_instructions: "Nếu tài khoản của bạn đã tồn tại, bạn sẽ được nhận một email với hướng dẫn mở khoá tài khoản trong vài phút nữa."
+      unlocked: "Tài khoản của bạn đã được mở khoá thành công. Làm ơn đăng nhâp để tiếp tục"
+  errors:
+    messages:
+      already_confirmed: "Đã xác thực, làm ơn thử đăng nhập lại."
+      confirmation_period_expired: "cần để xác thực trong %{period}, làm ơn yêu cầu một cái mới"
+      expired: "Đã hết hạn, Làm ơn yêu cầu một cái mới"
+      not_found: "Không tìm thấy"
+      not_locked: "Đã bị khoá"
+      not_saved:
+        one: "Một lỗi cấm điều này %{resource} từ việc lưu lại:"
+        other: "%{count} Những lỗi cấm làm điều %{resource} từ việc lưu lại:"
