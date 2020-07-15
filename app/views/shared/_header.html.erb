@@ -11,7 +11,7 @@
         <div class="col-lg-5">
           <div class="float-right">
             <ul class="right_side">
-              <% if user_signed_in? %>
+              <% if can? :read, User %>
               <li><%= link_to current_user.username, profile_user_path(current_user.id) %></li>
               <li><%= link_to t("layout_header.text_link_log_out"), logout_path, method: :delete %></li>
               <% else %>

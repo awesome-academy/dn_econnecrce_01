@@ -7,6 +7,7 @@ gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "cancancan", "~> 1.10"
 gem "chartkick", "~> 3.0", ">= 3.0.1"
 gem "config"
 gem "devise", "~> 4.1"

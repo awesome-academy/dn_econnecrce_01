@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
+  load_and_authorize_resource param_method: :purchase_params
   before_action :authenticate_user!, except: %i(home index destroy)
   before_action :cart_is_empty?, only: %i(create new)
-  before_action :find_purchase, only: %i(edit update)
 
   def new
     @purchase = Purchase.new
@@ -9,7 +9,6 @@ class PurchasesController < ApplicationController
 
   def create
     ActiveRecord::Base.transaction do
-      @purchase = current_user.purchases.build(purchase_params)
       @purchase.save!
       add_products_to_detailspurchase @purchase.id
       @purchase.send_mail_to_customer current_user.email, session[:cart]
@@ -36,14 +35,6 @@ class PurchasesController < ApplicationController
   end
 
   private
-
-  def find_purchase
-    @purchase = current_user.purchases.find_by(id: params[:id])
-    return if @purchase
-
-    flash[:danger] = t "user_purchase.purchase_not_found"
-    redirect_to user_path
-  end
 
   # insert details purchase in to details purchase
   def add_products_to_detailspurchase purchase_id

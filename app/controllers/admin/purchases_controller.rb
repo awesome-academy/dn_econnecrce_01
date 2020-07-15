@@ -1,5 +1,6 @@
 class Admin::PurchasesController < AdminsController
-  before_action :find_purchase, :user_signed_in?, only: %i(edit update)
+  before_action :authenticate_user!, only: %i(edit update)
+  load_and_authorize_resource param_method: :purchase_params
 
   def index
     @purchases = Purchase.sorted
@@ -23,14 +24,6 @@ class Admin::PurchasesController < AdminsController
   end
 
   private
-
-  def find_purchase
-    @purchase = Purchase.find_by(id: params[:id])
-    return if @purchase
-
-    flash[:danger] = t "admin_purchases.text_not_found"
-    redirect_to admin_purchases_url
-  end
 
   def purchase_params
     params.require(:purchase).permit(:status)

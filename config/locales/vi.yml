@@ -144,6 +144,8 @@ vi:
   application:
     text_english: "Tiếng Anh"
     text_vietnamese: "Tiếng Việt"
+    text_error_resource: "Không thể tìm thấy resource"
+    text_denied: "Truy cập vào trang này bị từ chối"
   products:
     title_page: "Sản phẩm"
     product_price: "USD"

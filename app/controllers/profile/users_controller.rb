@@ -1,5 +1,6 @@
 class Profile::UsersController < ApplicationController
-  before_action :load_user, :authenticate_user!, only: %i(edit show update)
+  load_and_authorize_resource param_update: :user_params
+  before_action :authenticate_user!, only: %i(edit show update)
   before_action :correct_user, only: %i(edit update)
 
   def show
@@ -32,14 +33,6 @@ class Profile::UsersController < ApplicationController
     return if current_user? @user
 
     flash[:danger] = t "profile.user_correct"
-    redirect_to root_url
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-
-    flash[:danger] = t "profile.user_not_found"
     redirect_to root_url
   end
 end

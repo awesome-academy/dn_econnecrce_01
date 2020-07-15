@@ -1,6 +1,6 @@
 class Admin::ProductsController < AdminsController
+  load_and_authorize_resource param_method: :product_params
   before_action :authenticate_user!, except: :index
-  before_action :load_product, except: %i(create new index import)
   before_action :find_category, only: %i(create update)
 
   def index
@@ -23,7 +23,7 @@ class Admin::ProductsController < AdminsController
   end
 
   def create
-    @product = @category.products.build product_params
+    byebug
     if @product.save
       flash[:success] = t "products.text_success_product"
       redirect_to admin_root_url
@@ -57,18 +57,5 @@ class Admin::ProductsController < AdminsController
     params
       .require(:product)
       .permit(:name, :unit_price, :quantity, :image, :category_id, :description)
-  end
-
-  # check current user is admin?
-  def admin_user
-    redirect_to(root_url) unless current_user.role?
-  end
-
-  def load_product
-    @product = Product.find_by id: params[:id]
-    return if @product
-
-    flash[:danger] = t "products.text_error_not_found"
-    redirect_to admin_root_url
   end
 end

@@ -145,6 +145,8 @@ en:
   application:
     text_english: "English"
     text_vietnamese: "Vietnamese"
+    text_error_resource: "Couldn't find resource."
+    text_denied: "Access denied"
   products:
     title_page: "Products"
     product_price: "USD"
