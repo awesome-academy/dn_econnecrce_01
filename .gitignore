@@ -68,3 +68,5 @@ yarn-debug.log*
 
 # Ignore application configuration
 /config/application.yml
+package-lock.json
+yarn.lock

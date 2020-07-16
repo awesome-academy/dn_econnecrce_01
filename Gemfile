@@ -21,6 +21,7 @@ gem "mysql2", "~> 0.4.4"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.1"
 gem "rails-i18n"
+gem "ransack"
 gem "roo"
 gem "rubocop", "~> 0.74.0", require: false
 gem "rubocop-rails", "~> 2.3.2", require: false

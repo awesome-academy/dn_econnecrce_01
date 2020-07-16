@@ -20,12 +20,28 @@
     </div>
   </div>
   <table class="table table-striped table-hover">
+    <div class="product_top_bar">
+      <%= search_form_for([:admin, @q], class: "navbar-form form-inline") do |f| %>
+        <%= f.condition_fields do |c| %>
+          <div class="field">
+            <%= c.attribute_fields do |a| %>
+              <%= a.attribute_select associations: [:category] %>
+            <% end %>
+            <%= c.predicate_select %>
+            <%= c.value_fields do |v| %>
+              <%= v.text_field :value %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= submit_tag t("products.text_btn_search"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <thead>
       <tr>
         <th><%= t "admin_products.text_dau" %></th>
-        <th><%= t "admin_products.text_name" %></th>
+        <th><%= sort_link @q, :name, t("admin_products.text_name") %></th>
         <th><%= t "admin_products.text_category" %></th>
-        <th><%= t "admin_products.text_unit_price" %></th>
+        <th><%= sort_link @q, :unit_price, t("admin_products.text_unit_price") %></th>
         <th><%= t "admin_products.text_quantity" %></th>
         <th><%= t "admin_products.text_descriptiom" %></th>
         <th><%= t "admin_products.text_edit" %></th>

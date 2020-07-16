@@ -5,10 +5,18 @@
       <%= render "shared/categories" %>
       <div class="col-lg-9">
         <div class="product_top_bar">
-          <%= form_tag(products_path, method: :get, class: "navbar-form form-inline") do %>
-            <div class="input-group search-box">
-              <%= text_field_tag(:term, params[:term]) %>
-            </div>
+          <%= search_form_for(@q, class: "navbar-form form-inline") do |f| %>
+            <%= f.condition_fields do |c| %>
+              <div class="field">
+                <%= c.attribute_fields do |a| %>
+                  <%= a.attribute_select associations: [:category] %>
+                <% end %>
+                <%= c.predicate_select %>
+                <%= c.value_fields do |v| %>
+                  <%= v.text_field :value %>
+                <% end %>
+              </div>
+            <% end %>
             <%= submit_tag t("products.text_btn_search"), class: "btn btn-primary" %>
           <% end %>
         </div>

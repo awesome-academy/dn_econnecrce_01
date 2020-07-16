@@ -5,5 +5,12 @@
   <td class="right"><%= number_to_currency(total_purchase) %></td>
   <td class="right"><%= purchase.status %></td>
   <td class="center"><%= link_to t("profile.link_to_edit"),
-    edit_purchase_path(purchase.id) %></td>
+  edit_purchase_path(purchase.id) %></td>
+  <% if purchase.status == "pending" || purchase.status == "confirmed" %>
+    <td>
+      <%= link_to update_purchase_url(purchase.id), method: :patch, data: {confirm: t("user_purchase.text_quest")}, class: "link-delete", :remote => true do %>
+        <%= t "user_purchase.text_link_Cancel" %>
+      <% end %>
+    </td>
+  <% end %>
 </tr>

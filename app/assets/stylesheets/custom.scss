@@ -17,6 +17,7 @@ $color_filterwidget: #eeeeee;
 $color_filterwidget_slide: e8f0f2;
 $color_header_area: #ededed;
 $color_purchase: #f6f6f6;
+$color_red: red;
 
 .active {
   color: $color_body;
@@ -1551,5 +1552,8 @@ img {
   padding: 10px 20px;
 }
 .alert{
-  color: red;
+  color: $color_red;
+}
+#notice h4{
+  color: $color_red;
 }

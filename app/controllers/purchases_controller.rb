@@ -26,12 +26,21 @@ class PurchasesController < ApplicationController
   def edit; end
 
   def update
-    @purchase.update! status: purchase_params[:status].to_i
+    @purchase.canceled!
+    @purchases = current_user.purchases
+                             .paginate(page: params[:page],
+                                       per_page: Settings.per_page_purchase)
     flash[:success] = t "purchases.status_updated"
-    redirect_to edit_purchase_path
+    respond_to do |format|
+      format.html{redirect_to edit_purchase_url}
+      format.js{flash.now[:notice] = t("purchases.status_updated")}
+    end
   rescue => e
     flash[:danger] = t "purchases.status_cant_update"
-    redirect_to edit_purchase_path
+    respond_to do |format|
+      format.html{redirect_to edit_purchase_url}
+      format.js{flash.now[:notice] = t("purchases.status_cant_update")}
+    end
   end
 
   private

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get "carts", to: "carts#index", as: "carts"
     get "/purchases", to: "purchases#new"
     resources :purchases, except: %i(home index destroy)
+    patch "/purchases/:id", to: "purchases#update", as: "update_purchase"
     resources :categories, only: :index
     devise_for :users
     namespace :admin do

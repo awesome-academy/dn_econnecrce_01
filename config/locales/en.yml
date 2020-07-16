@@ -52,6 +52,7 @@ en:
     purchase_status: "Status"
     text_created: "Updated at"
     text_quest: "Are you sure? "
+    text_link_Cancel: "Cancel"
   admin_products:
     title_table: "Product Management"
     text_button_add: "Add new product"
@@ -172,6 +173,7 @@ en:
     text_product_deleted: "Product deleted"
     text_error_not_found: "There is no products to display"
     text_btn_search: "Search"
+    text_error_resource: "Couldn't find resource."
   edit_product:
     text_title: "Edit"
     text_button_save: "Save"
@@ -226,6 +228,7 @@ en:
     status_suspended: "Unactive"
     status_active: "Actived"
     status_updated: "Purchase is updated"
+    status_cant_update: "Purchases can't update"
     status_updated_unactive: "Purchase is unactived"
     status_cant_update: "Oops! can not update now"
     title_edit: "Edit Purchase"

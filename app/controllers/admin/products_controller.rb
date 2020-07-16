@@ -4,9 +4,11 @@ class Admin::ProductsController < AdminsController
   before_action :find_category, only: %i(create update)
 
   def index
-    @products = Product.recent_product
-                       .paginate(page: params[:page],
-                                 per_page: Settings.per_page)
+    @q = Product.ransack(params[:q])
+    @products = @q.result
+                  .paginate(page: params[:page],
+                            per_page: Settings.per_page_user)
+    @q.build_condition
   end
 
   def import
@@ -23,7 +25,6 @@ class Admin::ProductsController < AdminsController
   end
 
   def create
-    byebug
     if @product.save
       flash[:success] = t "products.text_success_product"
       redirect_to admin_root_url

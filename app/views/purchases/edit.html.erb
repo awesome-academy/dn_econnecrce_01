@@ -66,10 +66,8 @@
               </td>
               <td>
                 <% if @purchase.status == "pending" || @purchase.status == "confirmed" %>
-                  <%= form_for @purchase do |f| %>
-                    <%= f.hidden_field :status, value: 4 %>
-                    <%= f.submit t("user_purchase.btncancel"), class: "main_btn",
-                      data: {confirm: t("user_purchase.text_quest")} %>
+                  <%= link_to update_purchase_url(@purchase.id), method: :patch, data: {confirm: t("user_purchase.text_quest")}, class: "main_btn" do %>
+                      <%= t "user_purchase.text_link_Cancel" %>
                   <% end %>
                 <% end %>
               </td>

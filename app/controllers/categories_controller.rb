@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.sorted
+    @q = Product.ransack(params[:q])
     @products = @category.products
                          .paginate(page: params[:page],
                                    per_page: Settings.per_page_user)

@@ -13,7 +13,6 @@ class Product < ApplicationRecord
 
   scope :recent_product, ->{order created_at: :desc}
   scope :sorted, ->{order :name}
-  scope :search, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
   scope :top_product, (lambda do
     joins(:detailpurchases)
       .group(:product_id)
