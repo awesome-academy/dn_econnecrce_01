@@ -1,0 +1,14 @@
+<%= form_for [:admin, @category], remote: true do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object%>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :name, class: "form-control" %>
+  </div>
+  <%= f.fields_for :products do |builder| %>
+  <% end %>
+  <div class="">
+    <%= link_to_add_association t("categories.link_add_product"), f, :products,
+      partial: "form_product" %>
+  </div>
+  <%= f.submit t("categories.btn_add"), class: "btn btn-primary" %>
+<% end %>

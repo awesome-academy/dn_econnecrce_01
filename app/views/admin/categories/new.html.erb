@@ -1,0 +1,35 @@
+<% provide(:title, t("categories.title_page")) %>
+<div class="col-md-10 col-md-offset-1 m-auto">
+  <div class="contact-form">
+    <h1><%= t "categories.title_page" %></h1>
+    <div id="notice" class="alert alert-primary" role="alert"></div>
+    <%= render "form" %>
+  </div>
+  <table class="table table-striped table-hover" id = "categories">
+    <thead>
+      <tr>
+        <th><%= t "admin_products.text_name" %></th>
+        <th><%= t "categories.category_name" %></th>
+        <th><%= t "categories.created_at" %></th>
+        <th><%= t "categories.updated_at" %></th>
+        <th><%= t "categories.products" %></th>
+        <th><%= t "admin_products.text_edit" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @categories.any? %>
+      <%= render @categories %>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="clearfix">
+    <div class="hint-text">
+      <%= t "products.text_showing" %>
+      <b><%= Settings.per_page %></b>
+      <%= t "products.text_out_of" %>
+      <b><%= @categories.count %></b>
+      <%= t "products.text_record" %>
+    </div>
+    <%= will_paginate @categories, class: "page-item" %>
+  </div>
+</div>

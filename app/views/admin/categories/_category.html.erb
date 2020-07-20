@@ -1,0 +1,10 @@
+<tr>
+  <td><%= category.name %></td>
+  <td><%= category.name %></td>
+  <td><%= ld category.created_at %></td>
+  <td><%= ld category.updated_at %></td>
+  <td></span><%= category.products.count %></td>
+  <td>
+    <%= link_to t("products.text_edit"), "#", class: "settings" %>
+  </td>
+</tr>

@@ -1,0 +1,6 @@
+<% if @category.errors.any? %>
+  alert("ERROR(S): <%= j @category.errors.full_messages.join('; ') %>")
+<% else %>
+  $('table#categories tbody').append("<%= j render @category %>");
+  $("#notice").html("<%= flash.now[:notice] %>");
+<% end %>

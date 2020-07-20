@@ -9,11 +9,24 @@ en:
     text_menu_user: "User manager"
     text_menu_product: "Products manager"
     text_menu_order: "Order manager"
-    text_menu_request: "Request manager"
+    text_menu_request: "Categories Manager"
     text_button_log_out: "Logout"
     text_welcom_admin: "Welcom Admin"
   admin_purchases:
     text_export: "Export excel"
+  categories:
+    link_add_product: "Add more products"
+    link_remove_product: "Remove this product"
+    title_page: "Categories management"
+    btn_add: "Add Category"
+    title: "Product 1 "
+    added_success: "Add category success"
+    add_failue: "Add failed"
+    category_name: "Category Name"
+    updated_at: "Updated at"
+    created_at: "Created at"
+    products: "Number of Products"
+    added_failed: "Add category failed"
   profile:
     user_not_found: "User not found"
     email: "Email"
@@ -287,6 +300,8 @@ en:
               bad_phone_number: "Should more than 10 and less than 11 character"
             address:
               bad_address: "Must details, shoud be 08 ha van tinh, lien chieu, da nang"
+        category:
+            bad_name: "Can't be more than 50 character"
   number:
      currency:
         format:

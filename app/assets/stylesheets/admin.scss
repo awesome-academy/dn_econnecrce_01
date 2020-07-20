@@ -26,7 +26,9 @@ $color_tbodya: #fcfcfc;
 $color_table_hover: #f5f5f5;
 $color_table_hovera: #2196F3;
 $color_table_hver: #F44336;
-
+$fieldset_color: #eeeeee;
+$legend_color: gray;
+$color_red: red;
 
 @media(min-width:768px) {
   body {
@@ -347,3 +349,57 @@ table.table .avatar {
   margin: 20px;
 }
 
+fieldset {
+  background-color: $fieldset_color;
+}
+
+legend {
+  background-color: $legend_color;
+  color: white;
+  padding: 5px 10px;
+}
+input {
+  margin: 5px;
+}
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
+.popup{
+  background: rgba(0,0,0,0.6);
+  width: 80%;
+  height: 100%;
+  position:  absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content{
+  height: 550px;
+  width: 1000px;
+  background: $color_page_wrapper;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+.close{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: $color_page_wrapper;
+  height: 60px;
+  width: 60px;
+  border-radius:  50%;
+  box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+#notice{
+  color: $color_red;
+}
