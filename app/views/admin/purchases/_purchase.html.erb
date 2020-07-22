@@ -2,7 +2,7 @@
   <td><%= purchase.id %></td>
   <td><%= purchase.name %></td>
   <td><%= purchase.phone_number %></td>
-  <td><%= purchase.address %></td>
+  <td><%= transform(purchase.address, Settings.string_purchase) %></td>
   <td><%= ld purchase.created_at %></td>
   <td><span class="status text-danger">&bull;</span><%= purchase.status %></td>
   <td><%= link_to t("purchases.column_edit"),

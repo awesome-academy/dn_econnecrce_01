@@ -33,7 +33,7 @@ class PurchasesController < ApplicationController
     flash[:success] = t "purchases.status_updated"
     respond_to do |format|
       format.html{redirect_to edit_purchase_url}
-      format.js{flash.now[:notice] = t("purchases.status_updated")}
+      format.js{flash.now[:success] = t("purchases.status_updated")}
     end
   rescue => e
     flash[:danger] = t "purchases.status_cant_update"

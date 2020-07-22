@@ -1,2 +1,2 @@
 $("#list_purchase").html("<%= j render(partial: 'profile/users/table') %>");
-$("#notice").html("<h4><%= flash[:notice] %></h4>");
+$("#notice").html("<h4><%= flash.now[:success] %></h4>");

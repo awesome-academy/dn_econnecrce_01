@@ -23,7 +23,7 @@
     <div class="product_top_bar">
       <%= search_form_for([:admin, @q], class: "navbar-form form-inline") do |f| %>
         <%= f.condition_fields do |c| %>
-          <div class="field">
+            <div class="field">
             <%= c.attribute_fields do |a| %>
               <%= a.attribute_select associations: [:category] %>
             <% end %>
@@ -33,7 +33,7 @@
             <% end %>
           </div>
         <% end %>
-        <%= submit_tag t("products.text_btn_search"), class: "btn btn-primary" %>
+          <%= submit_tag t("products.text_btn_search"), class: "btn btn-primary" %>
       <% end %>
     </div>
     <thead>

@@ -18,3 +18,6 @@ per_page_purchase: 9
 image_display: 200
 format_xls: "xls"
 excel: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+string_view: 100
+string_admin: 20
+string_purchase: 30

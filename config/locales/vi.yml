@@ -14,6 +14,23 @@ vi:
     text_welcom_admin: "Chào mừng đến với trang Quản Trị Viên"
   admin_purchases:
     text_export: "Xuất file excel"
+  categories:
+    link_add_product: "Thêm nhiều sản phẩm"
+    link_remove_product: "Xoá sản phẩm này"
+    title_page: "Quản lí loại sản phẩm"
+    btn_add: "Thêm loại sản phẩm"
+    title: "Sản phẩm"
+    added_success: "Thêo loại sản phẩm thành công"
+    add_failue: "Thêm loại sản phẩm thất bại"
+    category_name: "Tên loại sản phẩm"
+    updated_at: "Cập nhật ngày"
+    created_at: "Tạo ngày"
+    products: "Số lượn sản phẩm"
+    added_failed: "Thêm loại sản phẩm thất bại"
+    name_category: "Tên loại sản phẩm"
+    updated_category: "Loại sản phẩm đã được cập nhật"
+    new_category: "Thêm mới loại sản phẩm"
+    btn_cancel: "Cancel"
   profile:
     user_not_found: "Không tìm thấy người dùng"
     email: "Email"

@@ -8,7 +8,7 @@
   <td><%= product.category_name %></td>
   <td><%= number_to_currency(product.unit_price) %><%= t "products.text_usd" %></td>
   <td><%= product.quantity %></td>
-  <td></span><%= product.description %></td>
+  <td></span><%= transform(product.description, Settings.string_admin) %></td>
   <td>
     <%= link_to t("products.text_edit"), edit_admin_product_path(product), class: "settings" %>
   </td>

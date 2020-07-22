@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       end
       resources :products, except: %i(show destroy)
       resources :purchases, only: %i(index edit update)
-      resources :categories, only: %i(create new create)
+      resources :categories, except: %i(show destroy)
     end
   end
 end

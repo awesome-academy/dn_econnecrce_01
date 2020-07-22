@@ -19,7 +19,7 @@
               <%= image_tag(product.image, class: "img-fluid") %>
             <% end %>
           </div>
-          <h4><%= product.description %></h4>
+          <h4><%= transform(product.description, Settings.string_view) %></h4>
           <h4><%= number_to_currency(product.unit_price) %></h4>
           <li><%= link_to t("home_page.btn_addcart"),
             cart_add_item_path(product.id), method: :post, class: "main_btn" %>

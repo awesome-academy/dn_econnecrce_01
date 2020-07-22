@@ -29,4 +29,8 @@ module ApplicationHelper
       tmp += detail.quantity * detail.product.unit_price
     end
   end
+
+  def transform value, number
+    value.length <= number ? value : value.slice(0..number) + "..."
+  end
 end
